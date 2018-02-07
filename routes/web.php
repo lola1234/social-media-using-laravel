@@ -19,6 +19,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/getAuthData', function(){
+	return Auth::user();
+});
+
 Route::get('/check_relation_status/{id}', 'FriendController@check')->name('check');
 Route::get('/add_friend/{id}', 'FriendController@addFriend')->name('addfriend');
 Route::get('/accept_friend/{id}', 'FriendController@acceptFriend')->name('acceptfriend');
@@ -28,7 +33,11 @@ Route::get('/get_unread', function(){
 	return Auth::user()->unreadNotifications;
 });
 
+Route::get('/feed','FeedController@feed');
+
 Route::post('/create/post', 'PostController@store');
+Route::get('/like/{id}','LikeController@like');
+Route::get('/unlike/{id}','LikeController@unlike');
 
 Route::get('/profile/{slug}', 'ProfileController@index')->name('profile');
 Route::get('/profile/edit/profile', 'ProfileController@edit')->name('profile.edit');

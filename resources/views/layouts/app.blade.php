@@ -16,8 +16,11 @@
 </head>
 <body>
     <div id="app">
-        
+        <init></init>
+		
 		@include('layouts.nav')
+		
+		<search></search>
 		
 		<div class="container">
 			@yield('content')
@@ -30,11 +33,7 @@
 				</audio>
 			@endauth
 		</div>
-    
-	
-	
-	
-	
+  
 	</div>
 
     <!-- Scripts -->

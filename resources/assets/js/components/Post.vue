@@ -1,9 +1,11 @@
 <template>
-	<div class="panel panel-default">               
-		<div class="panel-body">                  
-			<textarea rows="5" class="form-control" v-model="content"></textarea>
-			<br>
-			<button class="btn btn-success pull-right" :disabled="notWorking" @click="createPost">Create</button>
+	<div class="row">
+		<div class="panel panel-default">               
+			<div class="panel-body">                  
+				<textarea rows="5" class="form-control" v-model="content"></textarea>
+				<br>
+				<button class="btn btn-success pull-right" :disabled="notWorking" @click="createPost">Create</button>
+			</div>
 		</div>
 	</div>
 </template>
